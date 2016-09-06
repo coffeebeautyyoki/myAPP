@@ -13,11 +13,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button activityLearn = null;
     Button toastLearn =null;
     Button passValue =null;
+    Button listView =null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("MainActivity",getClass().getName());
@@ -28,35 +29,41 @@ public class MainActivity extends AppCompatActivity {
         activityLearn = (Button) findViewById(R.id.btn_Activity);
         toastLearn =(Button) findViewById(R.id.btn_Toast);
         passValue =(Button)findViewById(R.id.btn_passvalue);
-        toastLearn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        listView =(Button)findViewById(R.id.btn_simpleList);
+        toastLearn.setOnClickListener(this);
+        activityLearn.setOnClickListener(this);
+        passValue.setOnClickListener(this);
+        listView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.btn_Toast:
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse("tel:10086"));
                 startActivity(i);
                 Toast.makeText(MainActivity.this,"you clicked me",Toast.LENGTH_SHORT).show();
-            }
-        });
-        activityLearn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                break;
+            case R.id.btn_Activity:
                 //Intent i = new Intent(MainActivity.this,ActivityLearn.class);
                 //Intent i = new Intent("h_kang.myapp.ACTION_START");
                 //Intent i = new Intent(Intent.ACTION_VIEW);
                 //i.setData(Uri.parse("http://www.baidu.com"));
                 //startActivity(i);
-                Intent i = new Intent(MainActivity.this,ActivityLearn.class);
-                startActivityForResult(i,1);
-            }
-        });
-        passValue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                Intent s = new Intent(MainActivity.this,ActivityLearn.class);
+                startActivityForResult(s,1);
+                break;
+            case R.id.btn_passvalue:
                 ActivityLearn.actionStart(MainActivity.this,"from mainactivity");
-            }
-        });
+                break;
+            case R.id.btn_simpleList:
+                Intent x = new Intent(MainActivity.this, SimpleListView.class);
+                startActivity(x);
+                break;
+        }
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

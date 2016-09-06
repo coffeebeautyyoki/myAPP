@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".util.Main2Activity" />
+        <activity android:name=".SimpleListView"></activity>
     </application>
 
 </manifest>

@@ -10,11 +10,17 @@
     tools:context="h_kang.myapp.MainActivity"
     android:orientation="horizontal">
 
+    <h_kang.myapp.NewTitleLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </h_kang.myapp.NewTitleLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="每天要做的事情的备忘哦"
         android:layout_marginTop="15dp"
+        android:layout_centerInParent="true"
         android:id="@+id/tw_title"/>
 
     <Button
@@ -39,5 +45,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_passvalue"
         android:layout_toRightOf="@id/btn_Toast"
+        android:layout_centerInParent="true"
         android:text="传值到第2个activity"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_simpleList"
+        android:layout_below="@id/btn_Activity"
+        android:layout_toRightOf="@id/btn_Toast"
+        android:layout_marginTop="15dp"
+        android:text="SimpleList"/>
 </RelativeLayout>
