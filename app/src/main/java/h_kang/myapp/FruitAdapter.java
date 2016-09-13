@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import other.Fruit;
-import other.ViewHolder;
+import h_kang.myapp.other.Fruit;
+import h_kang.myapp.other.ViewHolder;
 
 /**
  * Created by h_kang on 2016/9/6.

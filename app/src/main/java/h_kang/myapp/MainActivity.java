@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button toastLearn =null;
     Button passValue =null;
     Button listView =null;
+    Button fragmentClick=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("MainActivity",getClass().getName());
@@ -30,10 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toastLearn =(Button) findViewById(R.id.btn_Toast);
         passValue =(Button)findViewById(R.id.btn_passvalue);
         listView =(Button)findViewById(R.id.btn_simpleList);
+        fragmentClick =(Button)findViewById(R.id.btn_fragment);
         toastLearn.setOnClickListener(this);
         activityLearn.setOnClickListener(this);
         passValue.setOnClickListener(this);
         listView.setOnClickListener(this);
+        fragmentClick.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_simpleList:
                 Intent x = new Intent(MainActivity.this, SimpleListView.class);
                 startActivity(x);
+                break;
+            case R.id.btn_fragment:
+                Intent m = new Intent(MainActivity.this, FragmentActivity.class);
+                startActivity(m);
                 break;
         }
     }

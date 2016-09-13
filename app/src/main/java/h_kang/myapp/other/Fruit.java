@@ -1,4 +1,4 @@
-package other;
+package h_kang.myapp.other;
 
 /**
  * Created by h_kang on 2016/9/6.

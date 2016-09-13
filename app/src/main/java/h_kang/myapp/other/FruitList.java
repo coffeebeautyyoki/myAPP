@@ -1,4 +1,4 @@
-package other;
+package h_kang.myapp.other;
 
 import java.util.ArrayList;
 import java.util.List;

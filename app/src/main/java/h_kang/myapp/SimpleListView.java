@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import other.Fruit;
-import other.FruitList;
+import h_kang.myapp.other.Fruit;
+import h_kang.myapp.other.FruitList;
 
 public class SimpleListView extends AppCompatActivity {
     List<Fruit> fruitList;

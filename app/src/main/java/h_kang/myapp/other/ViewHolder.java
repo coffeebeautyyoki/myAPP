@@ -1,4 +1,4 @@
-package other;
+package h_kang.myapp.other;
 
 import android.widget.ImageView;
 import android.widget.TextView;
